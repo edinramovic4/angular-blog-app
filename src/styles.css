@@ -1,8 +1,25 @@
-/**
-@import "../node_modules/primeng/resources/primeng.min.css";
-@import "../node_modules/primeicons/primeicons.css";
-*/
-header {
+.iconButtons{
+  background-color: transparent;
+  border: none  ;
+  outline: none;
+}
+
+.p-button{
+  background-color: darkblue;
+  margin: auto;
+}
+.page-content {
+  font-family: Arial;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+.labelName {
+  font-family: Arial;
   font-size: x-large;
   text-align: center;
+  padding-bottom: 10px;
+}
+.textInput {
+  width: 1580px;
 }

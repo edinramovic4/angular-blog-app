@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MenuItem, PrimeIcons} from "primeng/api";
 
 @Component({
@@ -11,11 +11,19 @@ export class AppComponent {
   title = 'edin-blog-app';
   items: MenuItem[] = [];
 
+  constructor() {
+  }
+
   ngOnInit() {
     this.items = [
       {
         label: 'Home',
         icon: PrimeIcons.HOME,
+      },
+      {
+        label: 'Article Details',
+        icon: PrimeIcons.LIST,
+        routerLink: 'details',
       },
       {
         label: 'Saved',
@@ -32,6 +40,7 @@ export class AppComponent {
           {
             label: "Compose",
             icon: PrimeIcons.PENCIL,
+            routerLink: 'compose'
           },
           {
             label: "Edit",
@@ -40,19 +49,6 @@ export class AppComponent {
         ]
         /** Add nested buttons for upload, write, and ?edit */
       },
-      {
-        icon: PrimeIcons.USER,
-        items: [
-          {
-            label: "Account Info",
-            icon: PrimeIcons.INFO,
-          },
-          {
-            label: "Settings",
-            icon: PrimeIcons.COG,
-          }
-        ]
-      }
     ];
   }
 }

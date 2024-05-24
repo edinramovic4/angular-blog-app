@@ -1,10 +1,12 @@
 <header class="labelName">{{headerTitle}}</header>
 <p-menubar [model]="items">
   <div>
-    <input type="text" pInputText placeholder="Search">
+    <input type="text" pInputText placeholder="Author or Title">
     <button pButton type="button" icon="pi pi-search"></button>
   </div>
 </p-menubar>
 <div class="page-content">
-<router-outlet></router-outlet>
+<!-- <app-article-details></app-article-details> -->
+  <!--   <app-compose></app-compose> -->
+  <router-outlet></router-outlet>
 </div>
