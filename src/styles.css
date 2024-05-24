@@ -14,6 +14,11 @@
   margin-right: auto;
   margin-left: auto;
 }
+.container-side-by-side {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .labelName {
   font-family: Arial;
   font-size: x-large;

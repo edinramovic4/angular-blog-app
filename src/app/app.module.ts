@@ -10,6 +10,9 @@ import {EditorModule} from "primeng/editor";
 import {FormsModule} from "@angular/forms";
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import {TableModule} from "primeng/table";
+import { HomeComponent } from './home/home.component';
+import { SavedArticlesComponent } from './saved-articles/saved-articles.component';
+import {CardModule} from "primeng/card";
 
 
 @NgModule({
@@ -17,6 +20,8 @@ import {TableModule} from "primeng/table";
     AppComponent,
     ComposeComponent,
     ArticleDetailsComponent,
+    HomeComponent,
+    SavedArticlesComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,8 @@ import {TableModule} from "primeng/table";
     AppRoutingModule,
     EditorModule,
     FormsModule,
-    TableModule
+    TableModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

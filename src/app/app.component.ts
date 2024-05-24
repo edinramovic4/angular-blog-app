@@ -19,6 +19,7 @@ export class AppComponent {
       {
         label: 'Home',
         icon: PrimeIcons.HOME,
+        routerLink: 'home'
       },
       {
         label: 'Article Details',
@@ -28,6 +29,7 @@ export class AppComponent {
       {
         label: 'Saved',
         icon: PrimeIcons.HEART_FILL,
+        routerLink: 'saved-articles'
       },
       {
         label: 'Publish',
