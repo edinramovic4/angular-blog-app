@@ -5,7 +5,8 @@ import {Articles} from "../articles";
 @Component({
   selector: 'app-compose',
   templateUrl: './compose.component.html',
-  styleUrls: ['./compose.component.css']
+  styleUrls: ['./compose.component.css'],
+ /** providers: [MessageService] **/
 })
 export class ComposeComponent implements OnInit {
   headerTitle: string = "Article Title";
@@ -30,6 +31,7 @@ export class ComposeComponent implements OnInit {
   notFilled (){
     /** insert error message/popup here */
     console.log("notFilled() function started");
+   /** this.messageService.add({severity: 'error', summary: 'Error', detail: 'Message Content'}); */
   }
 
   /** Upload article to DB (.json file here) */
@@ -38,5 +40,6 @@ export class ComposeComponent implements OnInit {
     this.articleContent = this.articleContent.replace(/(<([^>]+)>)/ig, '');
     let newArticle: Articles = {index: articleIndex, saved: false, author: this.articleAuthor, title: this.articleTitle, content: this.articleContent};
     this.articles.push(newArticle);
+    /** this.messageService.add({severity: 'success', summary: 'Success', detail: 'Message Content'}); */
   }
 }

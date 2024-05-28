@@ -9,6 +9,8 @@ import {Articles} from "../articles";
 })
 export class HomeComponent implements OnInit {
   articles: Articles[] = data.articles;
+  displayEdit: boolean = false;
+  editArticle: Articles = this.articles[0];
 
   constructor() { }
 
@@ -26,6 +28,12 @@ export class HomeComponent implements OnInit {
   updateFile(index: number) {
 
   }
+
+  showEditScreen(index: number) {
+    this.displayEdit = true;
+    if (this.editArticle != this.articles[index]){this.editArticle = this.articles[index];}
+  }
+
 
   ngOnInit(): void {
   }

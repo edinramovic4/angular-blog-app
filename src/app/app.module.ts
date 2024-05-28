@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { SavedArticlesComponent } from './saved-articles/saved-articles.component';
 import {CardModule} from "primeng/card";
 import { SearchResultsComponent } from './search-results/search-results.component';
+import {DialogModule} from "primeng/dialog";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     FormsModule,
     TableModule,
     CardModule,
+    DialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

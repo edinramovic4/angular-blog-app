@@ -11,6 +11,8 @@ import {Articles} from "../articles";
 })
 export class SavedArticlesComponent implements OnInit {
   articles: Articles[] = data.articles;
+  displayEdit: boolean = false;
+  editArticle: Articles = this.articles[0];
 
   constructor() { }
 
@@ -30,6 +32,11 @@ export class SavedArticlesComponent implements OnInit {
   ImgRouteFor(index: number) : string{
     let imgRoute = "assets/images/uline" + index + ".png";
     return imgRoute;
+  }
+
+  showEditScreen(index: number) {
+    this.displayEdit = true;
+    if (this.editArticle != this.articles[index]){this.editArticle = this.articles[index];}
   }
 
 }
