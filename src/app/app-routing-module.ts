@@ -6,10 +6,10 @@ import {HomeComponent} from "./home/home.component";
 import {SavedArticlesComponent} from "./saved-articles/saved-articles.component";
 
 const routes: Routes = [
-  {path: 'compose', component: ComposeComponent},
-  {path: 'details', component: ArticleDetailsComponent},
-  {path: 'saved-articles', component: SavedArticlesComponent},
-  {path: 'home', component: HomeComponent},
+  {path: 'compose', title: 'Compose Component', component: ComposeComponent},
+  {path: 'details', title: 'Details Component', component: ArticleDetailsComponent},
+  {path: 'saved-articles', title: 'Saved Component', component: SavedArticlesComponent},
+  {path: 'home', title: 'Home Component',component: HomeComponent},
 ];
 
 @NgModule({
@@ -17,4 +17,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
