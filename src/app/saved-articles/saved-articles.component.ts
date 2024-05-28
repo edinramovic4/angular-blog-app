@@ -13,6 +13,7 @@ export class SavedArticlesComponent implements OnInit {
   articles: Articles[] = data.articles;
   displayEdit: boolean = false;
   editArticle: Articles = this.articles[0];
+  backupArticle: Articles = this.articles[0];
 
   constructor() { }
 
@@ -36,7 +37,10 @@ export class SavedArticlesComponent implements OnInit {
 
   showEditScreen(index: number) {
     this.displayEdit = true;
-    if (this.editArticle != this.articles[index]){this.editArticle = this.articles[index];}
+    if (this.editArticle != this.articles[index]){
+      this.editArticle = this.articles[index];
+      this.backupArticle = this.articles[index];
+    }
   }
 
 }
