@@ -13,6 +13,7 @@ import {TableModule} from "primeng/table";
 import { HomeComponent } from './home/home.component';
 import { SavedArticlesComponent } from './saved-articles/saved-articles.component';
 import {CardModule} from "primeng/card";
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {CardModule} from "primeng/card";
     ArticleDetailsComponent,
     HomeComponent,
     SavedArticlesComponent,
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,

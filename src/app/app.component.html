@@ -2,12 +2,10 @@
 <p-menubar [model]="items">
   <div>
     <input type="text" pInputText placeholder="Author or Title">
-    <button pButton type="button" icon="pi pi-search"></button>
+    <button pButton [routerLink]="['/search']" type="button" icon="pi pi-search"></button>
   </div>
 </p-menubar>
 <div>
   <pre></pre>
-<!-- <app-article-details></app-article-details> -->
-  <!--   <app-compose></app-compose> -->
   <router-outlet></router-outlet>
 </div>
