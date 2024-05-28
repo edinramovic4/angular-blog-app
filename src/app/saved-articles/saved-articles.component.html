@@ -1,0 +1,15 @@
+<div class="container-side-by-side">
+  <div *ngFor="let a of articles">
+    <p-card *ngIf="a.saved" header="{{a.title}}" subheader="{{a.author}}" [style]="{'width': '330px', 'margin-bottom': '2em', 'margin-left': '20px', 'margin-right': '25px'}">
+      <ng-template pTemplate="header">
+        <img alt="Card" [src]="ImgRouteFor(a.index)" height="200px">
+      </ng-template>
+      {{a.content.substring(0,230)}}...
+      <ng-template pTemplate="footer">
+        <div>
+          <button (click)="changeSave(a.index)" class="iconButtons"><i class="pi pi-heart-fill"></i></button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

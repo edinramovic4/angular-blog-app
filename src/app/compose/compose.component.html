@@ -1,0 +1,17 @@
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+<div class="page-content">
+<h5><u>{{headerTitle}}</u></h5>
+<input class="textInput" type="text" pInputText [(ngModel)]="articleTitle">
+<h5><u>{{headerContent}}</u></h5>
+<p-editor class="textInput" [(ngModel)]="articleContent" [style]="{'height':'320px'}">
+  <ng-template pTemplate="header">
+        <span class="ql-formats">
+            <button type="button" class="ql-bold" aria-label="Bold"></button>
+            <button type="button" class="ql-italic" aria-label="Italic"></button>
+            <button type="button" class="ql-underline" aria-label="Underline"></button>
+        </span>
+  </ng-template>
+</p-editor>
+<p-button label="Upload" icon="pi pi-arrow-up" (onClick)="verify()"></p-button>
+</div>
