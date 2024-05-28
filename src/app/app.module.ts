@@ -32,7 +32,7 @@ import {CardModule} from "primeng/card";
     EditorModule,
     FormsModule,
     TableModule,
-    CardModule
+    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
