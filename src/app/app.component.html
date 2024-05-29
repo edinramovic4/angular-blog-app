@@ -8,6 +8,6 @@
 </p-menubar>
 <div>
   <pre></pre>
-  <app-search-results *ngIf="searchResults"></app-search-results>
+  <app-search-results *ngIf="searchResults" [search]="searchInput"></app-search-results>
   <router-outlet *ngIf="!searchResults"></router-outlet>
 </div>

@@ -16,6 +16,8 @@ import {CardModule} from "primeng/card";
 import { SearchResultsComponent } from './search-results/search-results.component';
 import {DialogModule} from "primeng/dialog";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ConfirmPopupModule} from "primeng/confirmpopup";
+import {ToastModule} from "primeng/toast";
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     TableModule,
     CardModule,
     DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ConfirmPopupModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
