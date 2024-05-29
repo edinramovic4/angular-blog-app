@@ -7,12 +7,10 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SearchResultsComponent implements OnInit {
   @Input() search: string = '';
-  priorSearch: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
-    this.priorSearch = this.search
   }
 
 }

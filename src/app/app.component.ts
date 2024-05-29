@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 export class AppComponent {
   headerTitle = "Blog Page";
   title = 'edin-blog-app';
+  initInput: string = '';
   searchInput: string = '';
   searchResults: boolean = false;
   items: MenuItem[] = [];
@@ -57,6 +58,7 @@ export class AppComponent {
   }
 
   toggleSearch() {
+    this.searchInput = this.initInput;
     this.searchResults = true;
   }
 
