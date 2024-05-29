@@ -18,6 +18,7 @@ import {DialogModule} from "primeng/dialog";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ConfirmPopupModule} from "primeng/confirmpopup";
 import {ToastModule} from "primeng/toast";
+import { ArticleViewComponent } from './article-view/article-view.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {ToastModule} from "primeng/toast";
     HomeComponent,
     SavedArticlesComponent,
     SearchResultsComponent,
+    ArticleViewComponent,
   ],
   imports: [
     BrowserModule,

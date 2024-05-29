@@ -1,31 +1,32 @@
-<p-toast position="bottom-center"></p-toast>
-<p-confirmPopup></p-confirmPopup>
-<div class="container-side-by-side">
-  <div *ngFor="let a of articles">
-    <p-card *ngIf="a.saved" header="{{a.title}}" subheader="{{a.author}}" [style]="{'width': '330px', 'margin-bottom': '2em', 'margin-left': '20px', 'margin-right': '25px'}">
-      <ng-template pTemplate="header">
-        <img alt="Card" [src]="ImgRouteFor(a.index)">
-      </ng-template>
-      {{a.content.substring(0,230)}}...
-      <ng-template pTemplate="footer">
-        <div>
-          <button (click)="confirm($event, a.index)" class="iconButtons"><i class="pi pi-heart-fill"></i></button>
-        </div>
-        <div>
-          <button class="iconButtons" (click)="showEditScreen(a.index)"><i class="pi pi-pen-to-square"></i></button>
-        </div>
-      </ng-template>
-    </p-card>
-  </div>
-  <p-dialog header="Edit Article '{{editArticle.title}}'" [(visible)]="displayEdit" [modal]="true" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false" [maximizable]="true">
-    <p-editor class="textInput" [(ngModel)]="editArticle.content" [style]="{'height':'320px'}">
-      <ng-template pTemplate="header">
-        <span class="ql-formats">
-            <button type="button" class="ql-bold" aria-label="Bold"></button>
-            <button type="button" class="ql-italic" aria-label="Italic"></button>
-            <button type="button" class="ql-underline" aria-label="Underline"></button>
-        </span>
-      </ng-template>
-    </p-editor>
-  </p-dialog>
-</div>
+<app-article-view></app-article-view>
+<!--<p-toast position="bottom-center"></p-toast>-->
+<!--<p-confirmPopup></p-confirmPopup>-->
+<!--<div class="container-side-by-side">-->
+<!--  <div *ngFor="let a of articles">-->
+<!--    <p-card *ngIf="a.saved" header="{{a.title}}" subheader="{{a.author}}" [style]="{'width': '330px', 'margin-bottom': '2em', 'margin-left': '20px', 'margin-right': '25px'}">-->
+<!--      <ng-template pTemplate="header">-->
+<!--        <img alt="Card" [src]="ImgRouteFor(a.index)">-->
+<!--      </ng-template>-->
+<!--      {{a.content.substring(0,230)}}...-->
+<!--      <ng-template pTemplate="footer">-->
+<!--        <div>-->
+<!--          <button (click)="confirm($event, a.index)" class="iconButtons"><i class="pi pi-heart-fill"></i></button>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <button class="iconButtons" (click)="showEditScreen(a.index)"><i class="pi pi-pen-to-square"></i></button>-->
+<!--        </div>-->
+<!--      </ng-template>-->
+<!--    </p-card>-->
+<!--  </div>-->
+<!--  <p-dialog header="Edit Article '{{editArticle.title}}'" [(visible)]="displayEdit" [modal]="true" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false" [maximizable]="true">-->
+<!--    <p-editor class="textInput" [(ngModel)]="editArticle.content" [style]="{'height':'320px'}">-->
+<!--      <ng-template pTemplate="header">-->
+<!--        <span class="ql-formats">-->
+<!--            <button type="button" class="ql-bold" aria-label="Bold"></button>-->
+<!--            <button type="button" class="ql-italic" aria-label="Italic"></button>-->
+<!--            <button type="button" class="ql-underline" aria-label="Underline"></button>-->
+<!--        </span>-->
+<!--      </ng-template>-->
+<!--    </p-editor>-->
+<!--  </p-dialog>-->
+<!--</div>-->

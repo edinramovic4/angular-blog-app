@@ -56,7 +56,6 @@ export class AppComponent {
             icon: 'pi pi-pen-to-square',
           }
         ]
-        /** Add nested buttons for upload, write, and ?edit */
       },
     ];
   }
