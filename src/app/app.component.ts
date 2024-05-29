@@ -50,10 +50,6 @@ export class AppComponent {
             label: "Compose",
             icon: PrimeIcons.PENCIL,
             routerLink: 'compose'
-          },
-          {
-            label: "Edit",
-            icon: 'pi pi-pen-to-square',
           }
         ]
       },
