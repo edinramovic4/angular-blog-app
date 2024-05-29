@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem, PrimeIcons} from "primeng/api";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,15 @@ export class AppComponent {
   headerTitle = "Blog Page";
   title = 'edin-blog-app';
   searchInput: string = '';
+  searchResults: boolean = false;
   items: MenuItem[] = [];
 
-  constructor() {
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      this.searchResults = false;
+    });
   }
+
 
   ngOnInit() {
     this.items = [
@@ -53,6 +59,10 @@ export class AppComponent {
         /** Add nested buttons for upload, write, and ?edit */
       },
     ];
+  }
+
+  toggleSearch() {
+    this.searchResults = true;
   }
 
 }
