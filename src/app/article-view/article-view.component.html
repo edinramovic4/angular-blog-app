@@ -9,8 +9,7 @@
       {{a.content.substring(0,230)}}...
       <ng-template pTemplate="footer">
         <div *ngIf="a.saved">
-          <button (click)="confirm($event, a.index)" class="iconButtons"><i class="pi pi-heart-fill"></i></button>
-<!--          <button (click)="changeSave(a.index)" class="iconButtons"><i class="pi pi-heart-fill"></i></button>-->
+          <button (click)="confirmSave($event, a.index)" class="iconButtons"><i class="pi pi-heart-fill"></i></button>
         </div>
         <div *ngIf="!a.saved">
           <button (click)="changeSave(a.index)" class="iconButtons"><i class="pi pi-heart"></i></button>
@@ -20,10 +19,8 @@
         </div>
       </ng-template>
     </p-card>
-
-
-
   </div>
+
   <p-dialog header="Edit Article '{{editArticle.title}}'" [(visible)]="displayEdit" [modal]="true" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false" [maximizable]="true">
     <p-editor class="textInput" [(ngModel)]="editArticle.content" [style]="{'height':'320px'}">
       <ng-template pTemplate="header">
@@ -34,6 +31,8 @@
         </span>
       </ng-template>
     </p-editor>
+    <pre></pre>
+    <p-button (onClick)="confirmChanges($event)" label="Save Changes" icon="pi pi-check"></p-button>
   </p-dialog>
 </div>
 

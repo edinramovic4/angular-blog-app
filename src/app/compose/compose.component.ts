@@ -6,7 +6,6 @@ import {Articles} from "../articles";
   selector: 'app-compose',
   templateUrl: './compose.component.html',
   styleUrls: ['./compose.component.css'],
- /** providers: [MessageService] **/
 })
 export class ComposeComponent implements OnInit {
   headerTitle: string = "Article Title";
@@ -42,4 +41,5 @@ export class ComposeComponent implements OnInit {
     this.articles.push(newArticle);
     /** this.messageService.add({severity: 'success', summary: 'Success', detail: 'Message Content'}); */
   }
+
 }

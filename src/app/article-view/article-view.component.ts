@@ -56,7 +56,7 @@ export class ArticleViewComponent implements OnInit {
     }
   }
 
-  confirm(event: Event, index: number){
+  confirmSave(event: Event, index: number){
     if (this.isHomePage){
       this.changeSave(index);
       return;
@@ -64,13 +64,27 @@ export class ArticleViewComponent implements OnInit {
     this.confirmationService.confirm({
       target: event.target as EventTarget,
       message: "Are you sure you want to remove article from saved?",
-      icon: PrimeIcons.EXCLAMATION_TRIANGLE,
+      icon: PrimeIcons.QUESTION_CIRCLE,
       accept: () => {
         this.messageService.add({severity: 'success', summary: 'Confirmed', detail: 'Article unsaved'});
         this.changeSave(index);
       },
       reject: () => {
         this.messageService.add({severity: 'error', summary: 'Rejected', detail: 'Nothing changed'});
+      }
+    });
+  }
+
+  confirmChanges(event: Event){
+    this.confirmationService.confirm({
+      target: event.target as EventTarget,
+      message: "Do you want to confirm the changes?",
+      icon: PrimeIcons.QUESTION_CIRCLE,
+      accept: () => {
+        this.messageService.add({severity: 'success', summary: 'Confirmed', detail: 'Article updated'});
+      },
+      reject: () => {
+        this.messageService.add({severity: 'error', summary: 'Rejected', detail: 'No changes'});
       }
     });
   }
