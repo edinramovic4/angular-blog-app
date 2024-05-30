@@ -28,17 +28,20 @@ export class AppComponent {
       {
         label: 'Home',
         icon: PrimeIcons.HOME,
-        routerLink: 'home'
+        routerLink: 'home',
+        command: () => this.toggleSearch()
       },
       {
         label: 'Article Details',
         icon: PrimeIcons.LIST,
         routerLink: 'details',
+        command: () => this.toggleSearch()
       },
       {
         label: 'Saved',
         icon: PrimeIcons.HEART_FILL,
-        routerLink: 'saved-articles'
+        routerLink: 'saved-articles',
+        command: () => this.toggleSearch()
       },
       {
         label: 'Publish',
@@ -51,15 +54,20 @@ export class AppComponent {
           {
             label: "Compose",
             icon: PrimeIcons.PENCIL,
-            routerLink: 'compose'
+            routerLink: 'compose',
+            command: () => this.toggleSearch()
           }
         ]
       },
     ];
   }
 
+  toggleSearch(){
+    this.searchResults = false;
+    this.initInput = '';
+  }
 
-  toggleSearch() {
+  startSearch() {
     this.searchInput = this.initInput;
     this.searchResults = true;
   }

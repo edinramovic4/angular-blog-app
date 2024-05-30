@@ -24,7 +24,7 @@
         </td>
         </ng-template>
         <td>{{filtered.author}}</td>
-        <td>{{filtered.title}}</td>
+        <td><a [routerLink]="['/read', filtered.index]">{{filtered.title}}</a></td>
         <td><p>{{filtered.content.substring(0, 230)}}...</p></td>
       </tr>
     </ng-template>
