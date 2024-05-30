@@ -11,6 +11,7 @@ import {ConfirmationService, MessageService, PrimeIcons} from "primeng/api";
 })
 export class ArticleViewComponent implements OnInit {
   @Input() isHomePage: boolean = false;
+  imgRoute: string = '';
   articles: Articles[] = data.articles;
   filtered: Articles[] = this.articles;
   displayEdit: boolean = false;
@@ -44,8 +45,8 @@ export class ArticleViewComponent implements OnInit {
   }
 
   ImgRouteFor(index: number) : string{
-    let imgRoute = "assets/images/uline" + index + ".png";
-    return imgRoute;
+    this.imgRoute = "assets/images/uline" + index + ".png";
+    return this.imgRoute;
   }
 
   showEditScreen(index: number) {
