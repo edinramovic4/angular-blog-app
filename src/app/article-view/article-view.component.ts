@@ -85,6 +85,7 @@ export class ArticleViewComponent implements OnInit {
       accept: () => {
         this.messageService.add({severity: 'success', summary: 'Confirmed', detail: 'Article updated'});
         this.editArticle.content = this.changes;
+        this.displayEdit = false;
       },
       reject: () => {
         this.messageService.add({severity: 'error', summary: 'Rejected', detail: 'No changes'});
