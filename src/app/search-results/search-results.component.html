@@ -1,1 +1,9 @@
-<p>search results for {{search}}</p>
+<div *ngIf="resultCheck(); else no_result">
+<div *ngFor="let f of filtered">
+  <ul>{{f.author}}</ul>
+</div>
+</div>
+
+<ng-template #no_result>
+  <p>No results found</p>
+</ng-template>

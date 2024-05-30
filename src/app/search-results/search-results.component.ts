@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import data from '../../articles.json';
+import {Articles} from "../articles";
 
 @Component({
   selector: 'app-search-results',
@@ -6,6 +8,9 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
+  articles: Articles[] = data.articles;
+  filtered: Articles[] = this.articles;
+  isAuthor: boolean = false;
   @Input() search: string = '';
 
   constructor() { }
@@ -13,4 +18,27 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  resultCheck(): boolean {
+    if (this.articles.some(a => a.author.startsWith(this.search))) {
+      this.isAuthor = true;
+      this.filterArticles();
+      return true;
+    } else if (this.articles.some(a => a.title.startsWith(this.search))) {
+      this.filterArticles();
+      return true
+    } else { return false; }
+  }
+
+  filterArticles(){
+    if (this.isAuthor){
+      this.filtered = this.articles.filter(
+        (article) => article.author.startsWith(this.search)
+      );
+    }
+    else {
+      this.filtered = this.articles.filter(
+        (article) => article.title.startsWith(this.search)
+      );
+    }
+  }
 }
