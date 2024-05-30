@@ -17,8 +17,7 @@ export class AppComponent {
 
   constructor(private router: Router) {
     this.router.events.subscribe(() => {
-      this.searchResults = false;
-      this.initInput = '';
+      this.toggleSearch();
     });
   }
 
