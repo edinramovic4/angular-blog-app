@@ -1,0 +1,26 @@
+<div>
+<p-card header="{{article.title}}" subheader="{{article.author}}" [style]="{'width': '1863px', 'margin-bottom': '2em', 'margin-left': '20px', 'margin-right': '20px'}">
+  <ng-template pTemplate="header">
+    <div>
+          <span title="Return">
+          <button (click)="returnBack()" class="iconButtons"><i class="pi pi-arrow-left"></i></button>
+          </span>
+    </div>
+    <img class="read_img" alt="Card" [src]="ImgRouteFor(article.index)">
+  </ng-template>
+  <div *ngIf="article.saved; else not_saved">
+          <span title="Save">
+          <button (click)="changeSave()" class="iconButtons"><i class="pi pi-heart-fill"></i></button>
+          </span>
+  </div>
+  <ng-template #not_saved>
+    <div>
+          <span title="Save">
+          <button (click)="changeSave()" class="iconButtons"><i class="pi pi-heart"></i></button>
+          </span>
+    </div>
+  </ng-template>
+  <pre></pre>
+  {{article.content}}
+</p-card>
+</div>
