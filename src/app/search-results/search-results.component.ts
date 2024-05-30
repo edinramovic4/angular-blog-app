@@ -41,4 +41,12 @@ export class SearchResultsComponent implements OnInit {
       );
     }
   }
+
+  changeSave(index: number) {
+    if (this.articles[index].saved) {
+      this.articles[index].saved = false;
+    } else {
+      this.articles[index].saved = true;
+    }
+  }
 }
