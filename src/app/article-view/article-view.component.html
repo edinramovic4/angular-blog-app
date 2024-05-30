@@ -8,14 +8,25 @@
       </ng-template>
       {{a.content.substring(0,230)}}...
       <ng-template pTemplate="footer">
+        <div>
+          <span title="Read">
+          <button class="iconButtons"><i class="pi pi-book"></i></button>
+          </span>
+        </div>
         <div *ngIf="a.saved">
+          <span title="Save">
           <button (click)="confirmSave($event, a.index)" class="iconButtons"><i class="pi pi-heart-fill"></i></button>
+          </span>
         </div>
         <div *ngIf="!a.saved">
+          <span title="Save">
           <button (click)="changeSave(a.index)" class="iconButtons"><i class="pi pi-heart"></i></button>
+          </span>
         </div>
         <div>
+          <span title="Edit">
           <button class="iconButtons" (click)="showEditScreen(a.index)"><i class="pi pi-pen-to-square"></i></button>
+          </span>
         </div>
       </ng-template>
     </p-card>
