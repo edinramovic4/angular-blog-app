@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import {MenuItem, PrimeIcons} from "primeng/api";
 import {Router} from "@angular/router";
 

@@ -19,11 +19,11 @@ export class SearchResultsComponent implements OnInit {
   }
 
   resultCheck(): boolean {
-    if (this.articles.some(a => a.author.startsWith(this.search))) {
+    if (this.articles.some(a => a.author.toLowerCase().startsWith(this.search.toLowerCase()))) {
       this.isAuthor = true;
       this.filterArticles();
       return true;
-    } else if (this.articles.some(a => a.title.startsWith(this.search))) {
+    } else if (this.articles.some(a => a.title.toLowerCase().startsWith(this.search.toLowerCase()))) {
       this.filterArticles();
       return true
     } else { return false; }
@@ -32,21 +32,17 @@ export class SearchResultsComponent implements OnInit {
   filterArticles(){
     if (this.isAuthor){
       this.filtered = this.articles.filter(
-        (article) => article.author.startsWith(this.search)
+        (article) => article.author.toLowerCase().startsWith(this.search.toLowerCase())
       );
     }
     else {
       this.filtered = this.articles.filter(
-        (article) => article.title.startsWith(this.search)
+        (article) => article.title.toLowerCase().startsWith(this.search.toLowerCase())
       );
     }
   }
 
   changeSave(index: number) {
-    if (this.articles[index].saved) {
-      this.articles[index].saved = false;
-    } else {
-      this.articles[index].saved = true;
-    }
+    this.articles[index].saved = !this.articles[index].saved;
   }
 }
