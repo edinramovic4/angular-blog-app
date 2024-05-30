@@ -10,7 +10,7 @@
       <ng-template pTemplate="footer">
         <div>
           <span title="Read">
-          <button class="iconButtons"><i class="pi pi-book"></i></button>
+            <button class="iconButtons"> <a [routerLink]="['/read', a.index]"> <i class="pi pi-book"></i> </a> </button>
           </span>
         </div>
         <div *ngIf="a.saved">

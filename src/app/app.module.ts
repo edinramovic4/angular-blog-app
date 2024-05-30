@@ -19,6 +19,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ConfirmPopupModule} from "primeng/confirmpopup";
 import {ToastModule} from "primeng/toast";
 import { ArticleViewComponent } from './article-view/article-view.component';
+import { ReadComponent } from './read/read.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ArticleViewComponent } from './article-view/article-view.component';
     SavedArticlesComponent,
     SearchResultsComponent,
     ArticleViewComponent,
+    ReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,7 @@ import { ArticleViewComponent } from './article-view/article-view.component';
     DialogModule,
     BrowserAnimationsModule,
     ConfirmPopupModule,
-    ToastModule
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
