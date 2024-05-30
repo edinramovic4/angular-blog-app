@@ -21,7 +21,7 @@
         </button>
       </td>
       <td>{{articles.author}}</td>
-      <td>{{articles.title}}</td>
+      <td><a [routerLink]="['/read', articles.index]">{{articles.title}}</a></td>
       <td>
         <p>{{articles.content}}</p>
       </td>

@@ -18,15 +18,11 @@ export class ArticleDetailsComponent implements OnInit {
   }
 
   changeSave(index: number) {
-    if (this.articles[index].saved) {
-      this.articles[index].saved = false;
-    } else {
-      this.articles[index].saved = true;
-    }
-    this.updateFile();
+    this.articles[index].saved = !this.articles[index].saved;
+    // this.updateFile();
   }
 
-  updateFile() {
-    let articlesJson = JSON.stringify(this.articles);
-  }
+  // updateFile() {
+  //   let articlesJson = JSON.stringify(this.articles);
+  // }
 }
