@@ -21,6 +21,7 @@ export class ArticleViewComponent implements OnInit {
   constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {}
 
   ngOnInit(): void {
+    console.log(this.articles)
     if (!this.isHomePage){
       this.filterArticles();
     }

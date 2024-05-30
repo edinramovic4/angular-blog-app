@@ -1,6 +1,9 @@
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
 
+<p-toast position="bottom-center"></p-toast>
+<p-confirmPopup></p-confirmPopup>
+
 <div class="page-content">
 <h5><u>{{headerTitle}}</u></h5>
 <input placeholder="Write Title Here..." class="textInput" type="text" pInputText [(ngModel)]="articleTitle">
@@ -15,5 +18,5 @@
   </ng-template>
 </p-editor>
   <pre></pre>
-<p-button label="Upload" icon="pi pi-arrow-up" (click)="verify()"></p-button>
+<p-button label="Upload" icon="pi pi-arrow-up" (click)="confirmUpload($event)"></p-button>
 </div>
