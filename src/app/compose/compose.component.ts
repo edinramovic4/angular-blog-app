@@ -14,6 +14,8 @@ export class ComposeComponent implements OnInit {
   headerContent: string = "Article Content"
   articleTitle: string = "";
   articleContent: string = "";
+  title: boolean = true;
+  body: boolean = true;
   articleAuthor: string = "Edin Ramovic"
   articles: Articles[] = data.articles;
 
@@ -23,16 +25,25 @@ export class ComposeComponent implements OnInit {
   }
 
 
-  notFilled (){
-    /** insert error message/popup here */
-   /** this.messageService.add({severity: 'error', summary: 'Error', detail: 'Message Content'}); */
-  }
-
   confirmUpload(event: Event){
-    if (!this.articleTitle || !this.articleContent){
-      this.notFilled();
+    if (!this.articleTitle && !this.articleContent){
+      this.title = false;
+      this.body = false;
       return;
     }
+    else if (!this.articleTitle){
+      this.title = false;
+      this.body = true;
+      return;
+    }
+    else if (!this.body){
+      this.body = false;
+      this.title = true;
+      return
+    }
+
+    this.title = true;
+    this.body = true;
 
     this.confirmationService.confirm({
       target: event.target as EventTarget,
@@ -53,6 +64,8 @@ export class ComposeComponent implements OnInit {
     this.articleContent = this.articleContent.replace(/(<([^>]+)>)/ig, '');
     let newArticle: Articles = {index: articleIndex, saved: false, author: this.articleAuthor, title: this.articleTitle, content: this.articleContent};
     this.articles.push(newArticle);
+    this.articleTitle = "";
+    this.articleContent = "";
     /** this.messageService.add({severity: 'success', summary: 'Success', detail: 'Message Content'}); */
   }
 

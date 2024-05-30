@@ -21,6 +21,7 @@ import {ToastModule} from "primeng/toast";
 import { ArticleViewComponent } from './article-view/article-view.component';
 import { ReadComponent } from './read/read.component';
 import {InputTextareaModule} from "primeng/inputtextarea";
+import {MessageModule} from "primeng/message";
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import {InputTextareaModule} from "primeng/inputtextarea";
     ConfirmPopupModule,
     ToastModule,
     InputTextareaModule,
+    MessageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
