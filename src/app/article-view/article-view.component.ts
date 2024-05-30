@@ -12,11 +12,11 @@ import {ConfirmationService, MessageService, PrimeIcons} from "primeng/api";
 export class ArticleViewComponent implements OnInit {
   @Input() isHomePage: boolean = false;
   imgRoute: string = '';
+  changes: string = ''
   articles: Articles[] = data.articles;
   filtered: Articles[] = this.articles;
   displayEdit: boolean = false;
   editArticle: Articles = this.articles[0];
-  backupArticle: Articles = this.articles[0];
 
   constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {}
 
@@ -33,16 +33,15 @@ export class ArticleViewComponent implements OnInit {
   }
 
   changeSave(index: number) {
-    if (this.articles[index].saved) { this.articles[index].saved = false; }
-    else { this.articles[index].saved = true; }
+    this.articles[index].saved = !this.articles[index].saved;
 
     if (!this.isHomePage){this.filterArticles();}
-    this.updateFile(index);
+    // this.updateFile(index);
   }
 
-  updateFile(index: number) {
-
-  }
+  // updateFile(index: number) {
+  //
+  // }
 
   ImgRouteFor(index: number) : string{
     this.imgRoute = "assets/images/uline" + index + ".png";
@@ -53,8 +52,9 @@ export class ArticleViewComponent implements OnInit {
     this.displayEdit = true;
     if (this.editArticle != this.articles[index]){
       this.editArticle = this.articles[index];
-      this.backupArticle = this.articles[index];
+      this.changes = this.editArticle.content;
     }
+    else { this.changes = this.editArticle.content; }
   }
 
   confirmSave(event: Event, index: number){
@@ -83,6 +83,7 @@ export class ArticleViewComponent implements OnInit {
       icon: PrimeIcons.QUESTION_CIRCLE,
       accept: () => {
         this.messageService.add({severity: 'success', summary: 'Confirmed', detail: 'Article updated'});
+        this.editArticle.content = this.changes;
       },
       reject: () => {
         this.messageService.add({severity: 'error', summary: 'Rejected', detail: 'No changes'});
