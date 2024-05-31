@@ -10,7 +10,6 @@ import {Articles} from "../articles";
 export class SearchResultsComponent implements OnInit {
   articles: Articles[] = data.articles;
   filtered: Articles[] = this.articles;
-  isAuthor: boolean = false;
   @Input() search: string = '';
 
   constructor() { }
@@ -20,7 +19,6 @@ export class SearchResultsComponent implements OnInit {
 
   resultCheck(): boolean {
     if (this.articles.some(a => a.author.toLowerCase().startsWith(this.search.toLowerCase()))) {
-      this.isAuthor = true;
       this.filterArticles();
       return true;
     } else if (this.articles.some(a => a.title.toLowerCase().startsWith(this.search.toLowerCase()))) {
@@ -30,12 +28,11 @@ export class SearchResultsComponent implements OnInit {
   }
 
   filterArticles(){
-    if (this.isAuthor){
-      this.filtered = this.articles.filter(
-        (article) => article.author.toLowerCase().startsWith(this.search.toLowerCase())
-      );
-    }
-    else {
+    this.filtered = this.articles.filter(
+      (article) => article.author.toLowerCase().startsWith(this.search.toLowerCase())
+    );
+
+    if (this.filtered.length == 0) {
       this.filtered = this.articles.filter(
         (article) => article.title.toLowerCase().startsWith(this.search.toLowerCase())
       );
