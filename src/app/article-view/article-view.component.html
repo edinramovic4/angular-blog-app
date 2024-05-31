@@ -4,7 +4,7 @@
   <div *ngFor="let a of filtered">
     <p-card header="{{a.title}}" subheader="{{a.author}}" [style]="{'width': '330px', 'margin-bottom': '2em', 'margin-left': '20px', 'margin-right': '25px'}">
       <ng-template pTemplate="header">
-        <img alt="Card" [src]="ImgRouteFor(a.index)">
+        <img onerror="this.src='assets/images/uline0.png'" alt="Image" [src]="ImgRouteFor(a.index)">
       </ng-template>
       {{a.content.substring(0,200)}}...
       <ng-template pTemplate="footer">
