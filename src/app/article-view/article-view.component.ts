@@ -58,6 +58,7 @@ export class ArticleViewComponent implements OnInit {
     else { this.changes = this.editArticle.content; }
   }
 
+
   confirmSave(event: Event, index: number){
     if (this.isHomePage){
       this.changeSave(index);
